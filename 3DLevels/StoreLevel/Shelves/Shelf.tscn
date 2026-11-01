@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://tsqd61dc77ma"]
+
+[ext_resource type="Script" uid="uid://2mtgpbo4r5g4" path="res://3DLevels/StoreLevel/Shelves/shelf.gd" id="1_bnxsk"]
+
+[node name="Shelf" type="Node3D" unique_id=1246968707]
+script = ExtResource("1_bnxsk")
