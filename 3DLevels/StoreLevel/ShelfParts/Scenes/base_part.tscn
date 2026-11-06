@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bnvpcplcdodfk"]
+
+[ext_resource type="Script" uid="uid://drsem8b1xesoj" path="res://3DLevels/StoreLevel/ShelfParts/Scripts/part.gd" id="1_v8sl1"]
+
+[sub_resource type="PlaceholderMesh" id="PlaceholderMesh_3a435"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qaxad"]
+
+[node name="BasePart" type="Node3D" unique_id=1054724396]
+script = ExtResource("1_v8sl1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1198608644]
+mesh = SubResource("PlaceholderMesh_3a435")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=368866345]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=186816543]
+shape = SubResource("BoxShape3D_qaxad")

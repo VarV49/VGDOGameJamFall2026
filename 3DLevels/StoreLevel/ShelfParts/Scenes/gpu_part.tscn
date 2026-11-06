@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://buggraevgwcdi"]
+
+[ext_resource type="PackedScene" uid="uid://bnvpcplcdodfk" path="res://3DLevels/StoreLevel/ShelfParts/Scenes/base_part.tscn" id="1_ewyv7"]
+
+[node name="GPUPart" unique_id=1054724396 instance=ExtResource("1_ewyv7")]
+id = &"GPU"
+display_name = "GPU"
+category = "GPU"
+socket_type = &"GPU"
