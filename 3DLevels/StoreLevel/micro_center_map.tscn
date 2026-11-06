@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bs08tmy3umdk4"]
 
 [ext_resource type="PackedScene" uid="uid://dia2nitkmtgca" path="res://3DLevels/StoreLevel/Player/player.tscn" id="1_umu72"]
+[ext_resource type="PackedScene" uid="uid://tsqd61dc77ma" path="res://3DLevels/StoreLevel/Shelves/Shelf.tscn" id="2_urwil"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_3a435"]
 size = Vector3(6.589905, 0.26464844, 6.9385376)
@@ -9,6 +10,7 @@ size = Vector3(6.589905, 0.26464844, 6.9385376)
 data = PackedVector3Array(-3.2949998, 0.13229999, 3.4692998, 3.2949998, 0.13229999, 3.4692998, -3.2949998, -0.13229999, 3.4692998, 3.2949998, 0.13229999, 3.4692998, 3.2949998, -0.13229999, 3.4692998, -3.2949998, -0.13229999, 3.4692998, 3.2949998, 0.13229999, -3.4692998, -3.2949998, 0.13229999, -3.4692998, 3.2949998, -0.13229999, -3.4692998, -3.2949998, 0.13229999, -3.4692998, -3.2949998, -0.13229999, -3.4692998, 3.2949998, -0.13229999, -3.4692998, 3.2949998, 0.13229999, 3.4692998, 3.2949998, 0.13229999, -3.4692998, 3.2949998, -0.13229999, 3.4692998, 3.2949998, 0.13229999, -3.4692998, 3.2949998, -0.13229999, -3.4692998, 3.2949998, -0.13229999, 3.4692998, -3.2949998, 0.13229999, -3.4692998, -3.2949998, 0.13229999, 3.4692998, -3.2949998, -0.13229999, -3.4692998, -3.2949998, 0.13229999, 3.4692998, -3.2949998, -0.13229999, 3.4692998, -3.2949998, -0.13229999, -3.4692998, 3.2949998, 0.13229999, 3.4692998, -3.2949998, 0.13229999, 3.4692998, 3.2949998, 0.13229999, -3.4692998, -3.2949998, 0.13229999, 3.4692998, -3.2949998, 0.13229999, -3.4692998, 3.2949998, 0.13229999, -3.4692998, -3.2949998, -0.13229999, 3.4692998, 3.2949998, -0.13229999, 3.4692998, -3.2949998, -0.13229999, -3.4692998, 3.2949998, -0.13229999, 3.4692998, 3.2949998, -0.13229999, -3.4692998, -3.2949998, -0.13229999, -3.4692998)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ldpsp"]
+sky_top_color = Color(0.11025276, 0.4915933, 0.6189343, 1)
 
 [sub_resource type="Sky" id="Sky_qaxad"]
 sky_material = SubResource("ProceduralSkyMaterial_ldpsp")
@@ -35,3 +37,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.246392, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1768886401]
 environment = SubResource("Environment_3a435")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=770247155]
+transform = Transform3D(0.8164398, 0.27979338, -0.5051155, 0, 0.8747643, 0.48454908, 0.57743067, -0.39560515, 0.71419245, 0, 5.8196645, 6.5730314)
+light_color = Color(0.65884644, 0.75235224, 0.7525859, 1)
+light_energy = 1.515
+light_indirect_energy = 1.19
+light_volumetric_fog_energy = 1.482
+sky_mode = 1
+
+[node name="Shelves" type="Node3D" parent="." unique_id=1585967252]
+
+[node name="Shelf" parent="Shelves" unique_id=1246968707 instance=ExtResource("2_urwil")]
+transform = Transform3D(0.053938143, 0, -0.9985443, 0, 1, 0, 0.9985443, 0, 0.053938143, -1.293973, 1.4380493, -5.5504575)
