@@ -3,8 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://dia2nitkmtgca" path="res://3DLevels/StoreLevel/Player/player.tscn" id="1_umu72"]
 [ext_resource type="PackedScene" uid="uid://tsqd61dc77ma" path="res://3DLevels/StoreLevel/Shelves/Shelf.tscn" id="2_urwil"]
 [ext_resource type="PackedScene" uid="uid://b1ew38ggxfo27" path="res://3DLevels/StoreLevel/ShelfParts/Scenes/cpu_part.tscn" id="3_gr13w"]
-[ext_resource type="PackedScene" uid="uid://bfvau7e5orn5f" path="res://3DLevels/StoreLevel/PropMeshes/computer.glb" id="3_hft1x"]
 [ext_resource type="PackedScene" uid="uid://duk1klewh8hku" path="res://3DLevels/StoreLevel/BuildingMeshes/floor.tscn" id="4_kc3nf"]
+[ext_resource type="PackedScene" uid="uid://cph58qp622wwk" path="res://3DLevels/StoreLevel/PropMeshes/checkout.tscn" id="6_6jt8s"]
+[ext_resource type="PackedScene" uid="uid://df1gogbm5rcdg" path="res://3DLevels/StoreLevel/PropMeshes/computer.tscn" id="6_rrh42"]
+[ext_resource type="PackedScene" uid="uid://cc6snpibawnpa" path="res://3DLevels/StoreLevel/PropMeshes/workbench.tscn" id="7_rrh42"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_3a435"]
 size = Vector3(6.589905, 0.26464844, 6.9385376)
@@ -21,6 +23,19 @@ sky_material = SubResource("ProceduralSkyMaterial_6jt8s")
 background_mode = 2
 sky = SubResource("Sky_gr13w")
 ambient_light_source = 3
+ambient_light_color = Color(0.37981048, 0.37981054, 0.37981048, 1)
+reflected_light_source = 2
+ssao_enabled = true
+ssao_intensity = 3.0
+ssao_sharpness = 1.0
+ssil_enabled = true
+glow_enabled = true
+glow_intensity = 0.2
+glow_strength = 1.5
+glow_bloom = 0.3
+glow_hdr_threshold = 1.2
+fog_light_color = Color(0.6880135, 0.71702665, 0.76215947, 1)
+fog_light_energy = 0.01
 
 [node name="microCENTER" type="Node3D" unique_id=1930668010]
 
@@ -35,22 +50,46 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32315063, -0.36767578, -0.
 shape = SubResource("ConcavePolygonShape3D_urwil")
 
 [node name="Player" parent="." unique_id=751431608 instance=ExtResource("1_umu72")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.246392, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.541482, 1.246393, 3.9180694)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1768886401]
 environment = SubResource("Environment_3a435")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=770247155]
-transform = Transform3D(0.96368307, 0.24237832, 0.11210454, -0.2547843, 0.7087368, 0.6578581, 0.07999792, -0.6625291, 0.74475193, 0, 5.8196645, -16.268494)
-light_color = Color(0.85876715, 0.9295437, 0.9149763, 1)
+[node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment" unique_id=21236237]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.085417, 5.1518726, -12.738742)
+light_color = Color(0.9668763, 0.87487334, 0.79680043, 1)
+light_energy = 15.0
+light_indirect_energy = 5.0
 shadow_enabled = true
+omni_range = 100.0
+omni_attenuation = 2.0
 
-[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1427998495]
-transform = Transform3D(0.97893536, 0.18391003, -0.08867213, 0.030050639, 0.29978848, 0.95353234, 0.20194703, -0.9361111, 0.28794694, -29.981281, 5.8196645, 6.5730314)
-light_color = Color(0.92270297, 0.9083291, 0.89519745, 1)
-light_energy = 0.3
+[node name="OmniLight3D2" type="OmniLight3D" parent="WorldEnvironment" unique_id=1651222182]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.815012, 5.1518726, -12.738742)
+light_color = Color(0.9668763, 0.87487334, 0.79680043, 1)
+light_energy = 15.0
+light_indirect_energy = 5.0
 shadow_enabled = true
-sky_mode = 1
+omni_range = 100.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="WorldEnvironment" unique_id=903117989]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.085417, 5.1518726, 7.370424)
+light_color = Color(0.9668763, 0.87487334, 0.79680043, 1)
+light_energy = 15.0
+light_indirect_energy = 5.0
+shadow_enabled = true
+omni_range = 100.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="WorldEnvironment" unique_id=580417075]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7675486, 5.1518726, 7.370424)
+light_color = Color(0.9668763, 0.87487334, 0.79680043, 1)
+light_energy = 15.0
+light_indirect_energy = 5.0
+shadow_enabled = true
+omni_range = 100.0
+omni_attenuation = 2.0
 
 [node name="Shelves" type="Node3D" parent="." unique_id=1585967252]
 
@@ -82,5 +121,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2, 0, -25.2)
 
 [node name="Props" type="Node3D" parent="." unique_id=65881611]
 
-[node name="computer" parent="Props" unique_id=1596134676 instance=ExtResource("3_hft1x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.83124244, -2.571964)
+[node name="computer2" parent="Props" unique_id=1999666782 instance=ExtResource("6_rrh42")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4456234, 1.2439611, 0)
+
+[node name="Checkout" parent="Props" unique_id=343886679 instance=ExtResource("6_6jt8s")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.192468, 0, 0)
+
+[node name="Workbench" parent="Props" unique_id=945673384 instance=ExtResource("7_rrh42")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.9538424, 0, 1.102251)

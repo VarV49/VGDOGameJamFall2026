@@ -14,7 +14,7 @@ script = ExtResource("1_ossyw")
 shape = SubResource("CapsuleShape3D_3a435")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=795051124]
-transform = Transform3D(1, 0, 0, 0, 0.49999994, 0.8660254, 0, -0.8660254, 0.49999994, 0, 8, 4)
+transform = Transform3D(1, 0, 0, 0, 0.5735764, 0.819152, 0, -0.819152, 0.5735764, 0, 8, 4)
 
 [node name="BodyPivot" type="Node3D" parent="." unique_id=731117065]
 
@@ -22,5 +22,5 @@ transform = Transform3D(1, 0, 0, 0, 0.49999994, 0.8660254, 0, -0.8660254, 0.4999
 mesh = SubResource("CapsuleMesh_qaxad")
 
 [node name="Hand" type="Marker3D" parent="BodyPivot" unique_id=761954797]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -1.2)
 script = ExtResource("2_v0kqu")

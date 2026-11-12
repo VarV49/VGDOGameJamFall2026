@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://bhn846qig3cq5"]
+
+[ext_resource type="PackedScene" uid="uid://beyp8r1fe1w0e" path="res://3DLevels/StoreLevel/PropMeshes/GLBStuff/counter.glb" id="1_xv3ex"]
+[ext_resource type="Shader" uid="uid://dachs42a43aev" path="res://Shaders/cell_shader.gdshader" id="2_mgmc7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mraq4"]
+render_priority = 0
+shader = ExtResource("2_mgmc7")
+shader_parameter/albedo = Color(0.54497427, 0.5449743, 0.5449741, 1)
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(0, 0, 0)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(0, 0, 0)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b5w7n"]
+render_priority = 0
+shader = ExtResource("2_mgmc7")
+shader_parameter/albedo = Color(0.54497427, 0.5449743, 0.5449741, 1)
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(0, 0, 0)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(0, 0, 0)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2s0yj"]
+render_priority = 0
+shader = ExtResource("2_mgmc7")
+shader_parameter/albedo = Color(0.6002255, 0, 0.1351349, 1)
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(0, 0, 0)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(0, 0, 0)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rty50"]
+render_priority = 0
+shader = ExtResource("2_mgmc7")
+shader_parameter/albedo = Color(0.84313726, 0.7764706, 0, 1)
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(0, 0, 0)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(0, 0, 0)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oy64p"]
+render_priority = 0
+shader = ExtResource("2_mgmc7")
+shader_parameter/albedo = Color(0.54497427, 0.5449743, 0.5449741, 1)
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(0, 0, 0)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(0, 0, 0)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+
+[node name="counter" unique_id=1088384152 instance=ExtResource("1_xv3ex")]
+
+[node name="CR Amount" parent="Cash Register Base" parent_id_path=PackedInt32Array(2050638112) index="0" unique_id=1922736053]
+surface_material_override/0 = SubResource("ShaderMaterial_mraq4")
+
+[node name="CR Pole" parent="Cash Register Base" parent_id_path=PackedInt32Array(2050638112) index="2" unique_id=1188395793]
+surface_material_override/0 = SubResource("ShaderMaterial_b5w7n")
+
+[node name="CR Sticker" parent="Cash Register Base" parent_id_path=PackedInt32Array(2050638112) index="4" unique_id=1735488141]
+surface_material_override/0 = SubResource("ShaderMaterial_2s0yj")
+
+[node name="CR Text - Smile!" parent="Cash Register Base/CR Sticker" index="0" unique_id=1866655521]
+transform = Transform3D(0.546852, 0, 1.2037609e-15, 0, 1.5526149, 0, -1.49011585e-08, 0, 1.2731868, 0, 4.833, 2.871)
+surface_material_override/0 = SubResource("ShaderMaterial_rty50")
+
+[node name="Register" parent="Cash Register Base" parent_id_path=PackedInt32Array(2050638112) index="5" unique_id=1104357387]
+surface_material_override/0 = SubResource("ShaderMaterial_oy64p")

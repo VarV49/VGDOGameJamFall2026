@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var speed := 6.0
+@export var speed := 12.0
 @export var turn_speed := 14.0
 
 @onready var pivot: Node3D = $BodyPivot   # holds CharacterModel + PickupArea

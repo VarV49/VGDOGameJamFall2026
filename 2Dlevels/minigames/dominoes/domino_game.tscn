@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene format=3 uid="uid://cq2jloccwhwc6"]
 
-[ext_resource type="Script" path="domino_game.gd" id="1"]
+[ext_resource type="Script" uid="uid://djeamq6koxxm4" path="res://2Dlevels/minigames/dominoes/domino_game.gd" id="1"]
 
-[node name="DominoGame" type="Control"]
+[node name="DominoGame" type="Control" unique_id=725134235]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

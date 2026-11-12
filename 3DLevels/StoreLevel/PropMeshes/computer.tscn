@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://df1gogbm5rcdg"]
+
+[ext_resource type="PackedScene" uid="uid://bfvau7e5orn5f" path="res://3DLevels/StoreLevel/PropMeshes/GLBStuff/computer.glb" id="1_wht2s"]
+[ext_resource type="Shader" uid="uid://bdy4ge35lkww" path="res://Shaders/inverted_outline.gdshader" id="2_ubwpr"]
+[ext_resource type="Shader" uid="uid://dachs42a43aev" path="res://Shaders/cell_shader.gdshader" id="2_xm4tx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6odyx"]
+render_priority = 0
+shader = ExtResource("2_ubwpr")
+shader_parameter/outline_color = Color(0.02692153, 2.4990388e-06, 0.03003828, 1)
+shader_parameter/thickness = 0.030000001425
+shader_parameter/outline_energy = 1.0
+shader_parameter/outline_transparency = 1.0
+shader_parameter/merge_group = false
+shader_parameter/merge_depth_range = 10.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xoxsu"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.5647059, 0.5647059, 0.5647059, 1)
+metallic = 0.1
+metallic_specular = 1.0
+roughness = 0.0
+subsurf_scatter_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qo3vn"]
+render_priority = 0
+shader = ExtResource("2_xm4tx")
+shader_parameter/albedo = Color(0.90588236, 0, 0, 1)
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(0, 0, 0)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(0, 0, 0)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0a4dm"]
+render_priority = 0
+shader = ExtResource("2_xm4tx")
+shader_parameter/albedo = Color(0, 0.6431373, 0, 1)
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(0, 0, 0)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(0, 0, 0)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+
+[node name="computer" unique_id=1999666782 instance=ExtResource("1_wht2s")]
+
+[node name="Base" parent="." index="0" unique_id=823567898]
+material_overlay = SubResource("ShaderMaterial_6odyx")
+surface_material_override/0 = SubResource("StandardMaterial3D_xoxsu")
+surface_material_override/1 = SubResource("ShaderMaterial_qo3vn")
+
+[node name="Screen" parent="Base" index="0" unique_id=689934055]
+material_overlay = SubResource("ShaderMaterial_6odyx")
+surface_material_override/0 = SubResource("StandardMaterial3D_xoxsu")
+surface_material_override/1 = SubResource("ShaderMaterial_0a4dm")
+
+[node name="Cube" parent="." index="1" unique_id=1739901450]
+material_overlay = SubResource("ShaderMaterial_6odyx")
+surface_material_override/0 = SubResource("StandardMaterial3D_xoxsu")
+
+[node name="Cube_001" parent="." index="2" unique_id=1272115317]
+material_overlay = SubResource("ShaderMaterial_6odyx")
+
+[node name="Cube_002" parent="." index="3" unique_id=1889067435]
+material_overlay = SubResource("ShaderMaterial_6odyx")

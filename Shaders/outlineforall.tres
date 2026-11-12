@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://gnrye80hxk5r"]
+
+[ext_resource type="Shader" uid="uid://bdy4ge35lkww" path="res://Shaders/inverted_outline.gdshader" id="1_qs3f3"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_qs3f3")
+shader_parameter/outline_color = Color(0.02692153, 2.4990388e-06, 0.03003828, 1)
+shader_parameter/thickness = 0.050000002375
+shader_parameter/outline_energy = 1.0
+shader_parameter/outline_transparency = 1.0
+shader_parameter/merge_group = false
+shader_parameter/merge_depth_range = 10.0

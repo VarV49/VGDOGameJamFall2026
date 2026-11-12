@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bfvau7e5orn5f"
-path="res://.godot/imported/computer.glb-ea34d64a9a72d4ce3c3d64abbcd7389e.scn"
+uid="uid://3lig2afk6ht5"
+path="res://.godot/imported/workbench_counter.glb-7f64679f620d0e7e46049da2d2cf494f.scn"
 
 [deps]
 
-source_file="res://3DLevels/StoreLevel/PropMeshes/computer.glb"
-dest_files=["res://.godot/imported/computer.glb-ea34d64a9a72d4ce3c3d64abbcd7389e.scn"]
+source_file="res://3DLevels/StoreLevel/PropMeshes/GLBStuff/workbench_counter.glb"
+dest_files=["res://.godot/imported/workbench_counter.glb-7f64679f620d0e7e46049da2d2cf494f.scn"]
 
 [params]
 

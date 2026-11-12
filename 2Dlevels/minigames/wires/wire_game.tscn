@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c2pi2fo2fxkft"]
 
-[ext_resource type="Script" uid="uid://b53wqoovqqx6m" path="res://minigames/wires/wire_game.gd" id="1"]
+[ext_resource type="Script" uid="uid://b53wqoovqqx6m" path="res://2Dlevels/minigames/wires/wire_game.gd" id="1"]
 
 [node name="WireGame" type="Control" unique_id=500726207]
 layout_mode = 3
