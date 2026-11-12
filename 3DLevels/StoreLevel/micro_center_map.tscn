@@ -2,6 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://dia2nitkmtgca" path="res://3DLevels/StoreLevel/Player/player.tscn" id="1_umu72"]
 [ext_resource type="PackedScene" uid="uid://tsqd61dc77ma" path="res://3DLevels/StoreLevel/Shelves/Shelf.tscn" id="2_urwil"]
+[ext_resource type="PackedScene" uid="uid://b1ew38ggxfo27" path="res://3DLevels/StoreLevel/ShelfParts/Scenes/cpu_part.tscn" id="3_gr13w"]
+[ext_resource type="PackedScene" uid="uid://bfvau7e5orn5f" path="res://3DLevels/StoreLevel/PropMeshes/computer.glb" id="3_hft1x"]
+[ext_resource type="PackedScene" uid="uid://duk1klewh8hku" path="res://3DLevels/StoreLevel/BuildingMeshes/floor.tscn" id="4_kc3nf"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_3a435"]
 size = Vector3(6.589905, 0.26464844, 6.9385376)
@@ -9,15 +12,14 @@ size = Vector3(6.589905, 0.26464844, 6.9385376)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_urwil"]
 data = PackedVector3Array(-3.2949998, 0.13229999, 3.4692998, 3.2949998, 0.13229999, 3.4692998, -3.2949998, -0.13229999, 3.4692998, 3.2949998, 0.13229999, 3.4692998, 3.2949998, -0.13229999, 3.4692998, -3.2949998, -0.13229999, 3.4692998, 3.2949998, 0.13229999, -3.4692998, -3.2949998, 0.13229999, -3.4692998, 3.2949998, -0.13229999, -3.4692998, -3.2949998, 0.13229999, -3.4692998, -3.2949998, -0.13229999, -3.4692998, 3.2949998, -0.13229999, -3.4692998, 3.2949998, 0.13229999, 3.4692998, 3.2949998, 0.13229999, -3.4692998, 3.2949998, -0.13229999, 3.4692998, 3.2949998, 0.13229999, -3.4692998, 3.2949998, -0.13229999, -3.4692998, 3.2949998, -0.13229999, 3.4692998, -3.2949998, 0.13229999, -3.4692998, -3.2949998, 0.13229999, 3.4692998, -3.2949998, -0.13229999, -3.4692998, -3.2949998, 0.13229999, 3.4692998, -3.2949998, -0.13229999, 3.4692998, -3.2949998, -0.13229999, -3.4692998, 3.2949998, 0.13229999, 3.4692998, -3.2949998, 0.13229999, 3.4692998, 3.2949998, 0.13229999, -3.4692998, -3.2949998, 0.13229999, 3.4692998, -3.2949998, 0.13229999, -3.4692998, 3.2949998, 0.13229999, -3.4692998, -3.2949998, -0.13229999, 3.4692998, 3.2949998, -0.13229999, 3.4692998, -3.2949998, -0.13229999, -3.4692998, 3.2949998, -0.13229999, 3.4692998, 3.2949998, -0.13229999, -3.4692998, -3.2949998, -0.13229999, -3.4692998)
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ldpsp"]
-sky_top_color = Color(0.11025276, 0.4915933, 0.6189343, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6jt8s"]
 
-[sub_resource type="Sky" id="Sky_qaxad"]
-sky_material = SubResource("ProceduralSkyMaterial_ldpsp")
+[sub_resource type="Sky" id="Sky_gr13w"]
+sky_material = SubResource("ProceduralSkyMaterial_6jt8s")
 
 [sub_resource type="Environment" id="Environment_3a435"]
 background_mode = 2
-sky = SubResource("Sky_qaxad")
+sky = SubResource("Sky_gr13w")
 ambient_light_source = 3
 
 [node name="microCENTER" type="Node3D" unique_id=1930668010]
@@ -39,14 +41,46 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.246392, 0)
 environment = SubResource("Environment_3a435")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=770247155]
-transform = Transform3D(0.8164398, 0.27979338, -0.5051155, 0, 0.8747643, 0.48454908, 0.57743067, -0.39560515, 0.71419245, 0, 5.8196645, 6.5730314)
-light_color = Color(0.65884644, 0.75235224, 0.7525859, 1)
-light_energy = 1.515
-light_indirect_energy = 1.19
-light_volumetric_fog_energy = 1.482
+transform = Transform3D(0.96368307, 0.24237832, 0.11210454, -0.2547843, 0.7087368, 0.6578581, 0.07999792, -0.6625291, 0.74475193, 0, 5.8196645, -16.268494)
+light_color = Color(0.85876715, 0.9295437, 0.9149763, 1)
+shadow_enabled = true
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1427998495]
+transform = Transform3D(0.97893536, 0.18391003, -0.08867213, 0.030050639, 0.29978848, 0.95353234, 0.20194703, -0.9361111, 0.28794694, -29.981281, 5.8196645, 6.5730314)
+light_color = Color(0.92270297, 0.9083291, 0.89519745, 1)
+light_energy = 0.3
+shadow_enabled = true
 sky_mode = 1
 
 [node name="Shelves" type="Node3D" parent="." unique_id=1585967252]
 
-[node name="Shelf" parent="Shelves" unique_id=1246968707 instance=ExtResource("2_urwil")]
-transform = Transform3D(0.053938143, 0, -0.9985443, 0, 1, 0, 0.9985443, 0, 0.053938143, -1.293973, 1.4380493, -5.5504575)
+[node name="Shelf2" parent="Shelves" unique_id=1246968707 instance=ExtResource("2_urwil")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 2.281641, 2.0319786, -18.338856)
+
+[node name="Shelf3" parent="Shelves" unique_id=1575075276 instance=ExtResource("2_urwil")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 6.822546, 2.0319786, -18.338856)
+
+[node name="Shelf4" parent="Shelves" unique_id=2093866290 instance=ExtResource("2_urwil")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -6.7092314, 2.0319786, -18.338856)
+stock = Array[PackedScene]([ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w")])
+
+[node name="Shelf5" parent="Shelves" unique_id=1174738688 instance=ExtResource("2_urwil")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -2.2179585, 2.0319786, -18.338856)
+
+[node name="Floors" type="Node3D" parent="." unique_id=602700515]
+
+[node name="Floor" parent="Floors" unique_id=1091073900 instance=ExtResource("4_kc3nf")]
+
+[node name="Floor2" parent="Floors" unique_id=1897990455 instance=ExtResource("4_kc3nf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2, 0, 0)
+
+[node name="Floor3" parent="Floors" unique_id=149282227 instance=ExtResource("4_kc3nf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25.2)
+
+[node name="Floor4" parent="Floors" unique_id=1781526255 instance=ExtResource("4_kc3nf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2, 0, -25.2)
+
+[node name="Props" type="Node3D" parent="." unique_id=65881611]
+
+[node name="computer" parent="Props" unique_id=1596134676 instance=ExtResource("3_hft1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.83124244, -2.571964)

@@ -1,13 +1,12 @@
 [gd_scene format=3 uid="uid://b1ew38ggxfo27"]
 
 [ext_resource type="PackedScene" uid="uid://bnvpcplcdodfk" path="res://3DLevels/StoreLevel/ShelfParts/Scenes/base_part.tscn" id="1_3dbsg"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_3a435"]
+[ext_resource type="PackedScene" uid="uid://bn81e85y48uxk" path="res://3DLevels/StoreLevel/ShelfParts/PartMeshes/cpu.glb" id="2_6g1ka"]
 
 [node name="CPUPart" unique_id=1054724396 instance=ExtResource("1_3dbsg")]
 id = &"CPU"
 display_name = "CPU"
 category = "CPU"
 
-[node name="MeshInstance3D" parent="." index="0" unique_id=1198608644]
-mesh = SubResource("BoxMesh_3a435")
+[node name="cpu" parent="." index="1" unique_id=696489411 instance=ExtResource("2_6g1ka")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 0, 0.19873321, 0)

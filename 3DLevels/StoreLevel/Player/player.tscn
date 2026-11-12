@@ -1,32 +1,26 @@
 [gd_scene format=3 uid="uid://dia2nitkmtgca"]
 
 [ext_resource type="Script" uid="uid://opfw6gvbx0jr" path="res://3DLevels/StoreLevel/Player/Player.gd" id="1_ossyw"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_qaxad"]
+[ext_resource type="Script" uid="uid://cyql12ioghxqu" path="res://3DLevels/StoreLevel/Player/player_interact.gd" id="2_v0kqu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3a435"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_3a435"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_3a435"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qaxad"]
 
 [node name="Player" type="CharacterBody3D" unique_id=751431608]
 script = ExtResource("1_ossyw")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1600935722]
-mesh = SubResource("CapsuleMesh_qaxad")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=9138347]
 shape = SubResource("CapsuleShape3D_3a435")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=795051124]
-transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 5, 4)
+transform = Transform3D(1, 0, 0, 0, 0.49999994, 0.8660254, 0, -0.8660254, 0.49999994, 0, 8, 4)
 
-[node name="PickUpArea" type="Area3D" parent="." unique_id=1122118726]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+[node name="BodyPivot" type="Node3D" parent="." unique_id=731117065]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PickUpArea" unique_id=126404955]
-shape = SubResource("BoxShape3D_3a435")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BodyPivot" unique_id=1600935722]
+mesh = SubResource("CapsuleMesh_qaxad")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PickUpArea" unique_id=863653328]
-mesh = SubResource("BoxMesh_3a435")
+[node name="Hand" type="Marker3D" parent="BodyPivot" unique_id=761954797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2)
+script = ExtResource("2_v0kqu")

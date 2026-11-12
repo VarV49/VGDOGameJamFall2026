@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://dxr3upgasn5md"]
+
+[ext_resource type="Texture2D" uid="uid://csn8n5di1xy24" path="res://UIScreens/MainScreen.png" id="1_3qyw5"]
+[ext_resource type="Script" uid="uid://c1167uboh15t8" path="res://UIScreens/main_menu.gd" id="1_awkfw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3qyw5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uam8b"]
+bg_color = Color(0, 0, 0, 0.45882353)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e78ci"]
+bg_color = Color(0.71413785, 0.39208898, 0, 0.2)
+
+[node name="MainMenu" type="Control" unique_id=484328138]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_awkfw")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1156744212]
+visibility_layer = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_3qyw5")
+expand_mode = 1
+
+[node name="Play" type="Button" parent="." unique_id=1693569119]
+layout_mode = 0
+offset_left = 642.0
+offset_top = 454.0
+offset_right = 1272.0
+offset_bottom = 580.26
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3qyw5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uam8b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e78ci")
+
+[node name="Instructions" type="Button" parent="." unique_id=1515558587]
+layout_mode = 0
+offset_left = 642.0
+offset_top = 592.955
+offset_right = 1272.0
+offset_bottom = 690.85004
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3qyw5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uam8b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e78ci")
+
+[node name="ExitGame" type="Button" parent="." unique_id=1498113860]
+layout_mode = 0
+offset_left = 642.0
+offset_top = 705.915
+offset_right = 1272.0
+offset_bottom = 805.245
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3qyw5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uam8b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e78ci")
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Instructions" to="." method="_on_instructions_pressed"]
+[connection signal="pressed" from="ExitGame" to="." method="_on_exit_game_pressed"]
