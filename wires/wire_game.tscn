@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c2pi2fo2fxkft"]
+
+[ext_resource type="Script" uid="uid://b53wqoovqqx6m" path="res://minigames/wires/wire_game.gd" id="1"]
+
+[node name="WireGame" type="Control" unique_id=500726207]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = 2.0
+offset_right = -4.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
