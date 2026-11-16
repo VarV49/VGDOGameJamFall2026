@@ -10,7 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://cph58qp622wwk" path="res://3DLevels/StoreLevel/PropMeshes/checkout.tscn" id="6_6jt8s"]
 [ext_resource type="PackedScene" uid="uid://df1gogbm5rcdg" path="res://3DLevels/StoreLevel/PropMeshes/computer.tscn" id="6_rrh42"]
 [ext_resource type="Script" uid="uid://cihhnxr0u027e" path="res://3DLevels/StoreLevel/Scripts/customer_manager.gd" id="7_6g2p5"]
+[ext_resource type="PackedScene" uid="uid://dv67g0f0yuj0n" path="res://3DLevels/StoreLevel/ShelfParts/Scenes/alu_part.tscn" id="7_8tkel"]
+[ext_resource type="PackedScene" uid="uid://buggraevgwcdi" path="res://3DLevels/StoreLevel/ShelfParts/Scenes/gpu_part.tscn" id="7_ds26g"]
 [ext_resource type="PackedScene" uid="uid://cc6snpibawnpa" path="res://3DLevels/StoreLevel/PropMeshes/workbench.tscn" id="7_rrh42"]
+[ext_resource type="PackedScene" uid="uid://cnmmxoki2npgn" path="res://3DProps/caution_wet_sign.tscn" id="8_jb3f2"]
+[ext_resource type="PackedScene" uid="uid://26nk6002w747" path="res://3DLevels/StoreLevel/ShelfParts/Scenes/ram_part.tscn" id="8_y0ppm"]
 [ext_resource type="PackedScene" uid="uid://do8hnufsn6ef3" path="res://3DLevels/StoreLevel/Customers/customer.tscn" id="9_l1ovf"]
 [ext_resource type="Script" uid="uid://up51wsw2ykm6" path="res://3DLevels/StoreLevel/Scripts/hud.gd" id="12_cfqw3"]
 
@@ -88,18 +92,87 @@ omni_attenuation = 2.0
 
 [node name="Shelves" type="Node3D" parent="microCENTER" unique_id=1585967252]
 
-[node name="Shelf2" parent="microCENTER/Shelves" unique_id=1246968707 instance=ExtResource("2_urwil")]
+[node name="CPUShelves" type="Node3D" parent="microCENTER/Shelves" unique_id=267695728]
+
+[node name="Shelf2" parent="microCENTER/Shelves/CPUShelves" unique_id=1246968707 instance=ExtResource("2_urwil")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 2.281641, 2.0319786, -18.338856)
 
-[node name="Shelf3" parent="microCENTER/Shelves" unique_id=1575075276 instance=ExtResource("2_urwil")]
+[node name="Shelf3" parent="microCENTER/Shelves/CPUShelves" unique_id=1575075276 instance=ExtResource("2_urwil")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 6.822546, 2.0319786, -18.338856)
 
-[node name="Shelf4" parent="microCENTER/Shelves" unique_id=2093866290 instance=ExtResource("2_urwil")]
+[node name="Shelf4" parent="microCENTER/Shelves/CPUShelves" unique_id=2093866290 instance=ExtResource("2_urwil")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -6.7092314, 2.0319786, -18.338856)
 stock = Array[PackedScene]([ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w")])
 
-[node name="Shelf5" parent="microCENTER/Shelves" unique_id=1174738688 instance=ExtResource("2_urwil")]
+[node name="Shelf5" parent="microCENTER/Shelves/CPUShelves" unique_id=1174738688 instance=ExtResource("2_urwil")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -2.2179585, 2.0319786, -18.338856)
+
+[node name="Shelf6" parent="microCENTER/Shelves/CPUShelves" unique_id=1144303315 instance=ExtResource("2_urwil")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -21.805115, 2.0319786, -18.338856)
+
+[node name="Shelf7" parent="microCENTER/Shelves/CPUShelves" unique_id=998885878 instance=ExtResource("2_urwil")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -17.26421, 2.0319786, -18.338856)
+
+[node name="Shelf8" parent="microCENTER/Shelves/CPUShelves" unique_id=371196676 instance=ExtResource("2_urwil")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -30.795988, 2.0319786, -18.338856)
+stock = Array[PackedScene]([ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w")])
+
+[node name="Shelf9" parent="microCENTER/Shelves/CPUShelves" unique_id=1147903160 instance=ExtResource("2_urwil")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -26.304714, 2.0319786, -18.338856)
+
+[node name="GPUShelves" type="Node3D" parent="microCENTER/Shelves" unique_id=1843696190]
+
+[node name="Shelf2" parent="microCENTER/Shelves/GPUShelves" unique_id=2001633382 instance=ExtResource("2_urwil")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 2.281641, 2.0319786, -29.21973)
+stock = Array[PackedScene]([ExtResource("7_ds26g"), ExtResource("7_ds26g"), ExtResource("7_ds26g"), ExtResource("7_ds26g")])
+
+[node name="Shelf3" parent="microCENTER/Shelves/GPUShelves" unique_id=2114718830 instance=ExtResource("2_urwil")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 6.822546, 2.0319786, -29.21973)
+stock = Array[PackedScene]([ExtResource("7_ds26g"), ExtResource("7_ds26g"), ExtResource("7_ds26g"), ExtResource("7_ds26g")])
+
+[node name="Shelf4" parent="microCENTER/Shelves/GPUShelves" unique_id=577895056 instance=ExtResource("2_urwil")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -6.7092314, 2.0319786, -29.21973)
+stock = Array[PackedScene]([ExtResource("7_ds26g"), ExtResource("7_ds26g"), ExtResource("7_ds26g"), ExtResource("7_ds26g")])
+
+[node name="Shelf5" parent="microCENTER/Shelves/GPUShelves" unique_id=1680452067 instance=ExtResource("2_urwil")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -2.2179585, 2.0319786, -29.21973)
+stock = Array[PackedScene]([ExtResource("7_ds26g"), ExtResource("7_ds26g"), ExtResource("7_ds26g"), ExtResource("7_ds26g")])
+
+[node name="Shelf6" parent="microCENTER/Shelves/GPUShelves" unique_id=1897618866 instance=ExtResource("2_urwil")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -21.805115, 2.0319786, -29.21973)
+stock = Array[PackedScene]([ExtResource("8_y0ppm"), ExtResource("8_y0ppm"), ExtResource("8_y0ppm"), ExtResource("8_y0ppm")])
+
+[node name="Shelf7" parent="microCENTER/Shelves/GPUShelves" unique_id=245451941 instance=ExtResource("2_urwil")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -17.26421, 2.0319786, -29.21973)
+stock = Array[PackedScene]([ExtResource("8_y0ppm"), ExtResource("8_y0ppm"), ExtResource("8_y0ppm"), ExtResource("8_y0ppm")])
+
+[node name="Shelf8" parent="microCENTER/Shelves/GPUShelves" unique_id=1987080379 instance=ExtResource("2_urwil")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -30.795988, 2.0319786, -29.21973)
+stock = Array[PackedScene]([ExtResource("8_y0ppm"), ExtResource("8_y0ppm"), ExtResource("8_y0ppm"), ExtResource("8_y0ppm")])
+
+[node name="Shelf9" parent="microCENTER/Shelves/GPUShelves" unique_id=1598485779 instance=ExtResource("2_urwil")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -26.304714, 2.0319786, -29.21973)
+stock = Array[PackedScene]([ExtResource("8_y0ppm"), ExtResource("8_y0ppm"), ExtResource("8_y0ppm"), ExtResource("8_y0ppm")])
+
+[node name="ALUShelves" type="Node3D" parent="microCENTER/Shelves" unique_id=136435655]
+
+[node name="Shelf2" parent="microCENTER/Shelves/ALUShelves" unique_id=1205340553 instance=ExtResource("2_urwil")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.069607, 2.0319784, -4.692813)
+stock = Array[PackedScene]([ExtResource("7_8tkel"), ExtResource("7_8tkel"), ExtResource("7_8tkel"), ExtResource("7_8tkel")])
+
+[node name="Shelf3" parent="microCENTER/Shelves/ALUShelves" unique_id=2109548130 instance=ExtResource("2_urwil")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.05296, 2.0319784, -9.233688)
+stock = Array[PackedScene]([ExtResource("7_8tkel"), ExtResource("7_8tkel"), ExtResource("7_8tkel"), ExtResource("7_8tkel")])
+
+[node name="Shelf4" parent="microCENTER/Shelves/ALUShelves" unique_id=503494872 instance=ExtResource("2_urwil")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.102573, 2.0319784, 4.2979994)
+stock = Array[PackedScene]([ExtResource("7_8tkel"), ExtResource("7_8tkel"), ExtResource("7_8tkel"), ExtResource("7_8tkel")])
+
+[node name="Shelf5" parent="microCENTER/Shelves/ALUShelves" unique_id=1444634726 instance=ExtResource("2_urwil")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.0861, 2.0319784, -0.19324398)
+stock = Array[PackedScene]([ExtResource("7_8tkel"), ExtResource("7_8tkel"), ExtResource("7_8tkel"), ExtResource("7_8tkel")])
+
+[node name="RAMShelves" type="Node3D" parent="microCENTER/Shelves" unique_id=170779016]
 
 [node name="Floors" type="Node3D" parent="microCENTER" unique_id=602700515]
 
@@ -115,6 +188,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25.2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2, 0, -25.2)
 
 [node name="Props" type="Node3D" parent="microCENTER" unique_id=65881611]
+
+[node name="CautionWetSign" parent="microCENTER/Props" unique_id=1490811730 instance=ExtResource("8_jb3f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.80750656, -6.9083138)
 
 [node name="MainDesk" type="Node3D" parent="microCENTER" unique_id=1317907384]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.3340993, 0)

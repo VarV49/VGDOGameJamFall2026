@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://26nk6002w747"]
 
 [ext_resource type="PackedScene" uid="uid://bnvpcplcdodfk" path="res://3DLevels/StoreLevel/ShelfParts/Scenes/base_part.tscn" id="1_qitmo"]
+[ext_resource type="PackedScene" uid="uid://b06qda4dd75cv" path="res://3DLevels/StoreLevel/ShelfParts/PartMeshes/ram.glb" id="2_ugrma"]
 
 [node name="RAMPart" unique_id=1054724396 instance=ExtResource("1_qitmo")]
 id = &"RAM"
 display_name = "RAM"
 category = "RAM"
 socket_type = &"RAM"
+
+[node name="ram" parent="." index="1" unique_id=513267181 instance=ExtResource("2_ugrma")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
