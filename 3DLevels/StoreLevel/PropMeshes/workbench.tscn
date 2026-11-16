@@ -83,7 +83,7 @@ shadow_mesh = SubResource("ArrayMesh_cxc7g")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7uq2v"]
 render_priority = 0
 shader = ExtResource("1_gscda")
-shader_parameter/albedo = Color(1.353256, 1.353256, 1.353256, 1)
+shader_parameter/albedo = Color(1.0627335, 1.0627335, 1.0627335, 1)
 shader_parameter/albedo_texture_size = Vector2i(0, 0)
 shader_parameter/point_size = 0.0
 shader_parameter/roughness = 0.0
@@ -804,6 +804,21 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6h6t6")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ajp2"]
+render_priority = 0
+shader = ExtResource("1_gscda")
+shader_parameter/albedo = Color(0.49943948, 0.49943954, 0.49943948, 1)
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(0, 0, 0)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(0, 0, 0)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7jhfq"]
 resource_name = "07 - Default.001"
 cull_mode = 2
@@ -1483,8 +1498,9 @@ mesh = SubResource("ArrayMesh_5q4fl")
 surface_material_override/0 = SubResource("ShaderMaterial_mx42l")
 
 [node name="Peg Board_001" type="MeshInstance3D" parent="workbench_counter" unique_id=1537282529]
-transform = Transform3D(3.741815e-08, 0.05655132, -6.4612062e-09, 0.10462872, -2.0224329e-08, 6.4612085e-09, 5.612517e-09, -3.0335396e-09, -0.120450005, 2.4834783, 1.8901168, 0.029194653)
+transform = Transform3D(3.741815e-08, 0.05655132, -6.4612062e-09, 0.10462872, -2.0224329e-08, 6.4612085e-09, 5.612517e-09, -3.0335396e-09, -0.120450005, 2.4677937, 1.3633417, 0.5185137)
 mesh = SubResource("ArrayMesh_44r8y")
+surface_material_override/0 = SubResource("ShaderMaterial_1ajp2")
 
 [node name="Circle Magnet" type="MeshInstance3D" parent="workbench_counter/Peg Board_001" unique_id=1292271206]
 transform = Transform3D(0.114452, 0, 0, 0, -0.054609995, -1.5011699e-08, 0, 8.2458795e-09, -0.09941799, 2.0477345, -0.9657746, 0.8694382)

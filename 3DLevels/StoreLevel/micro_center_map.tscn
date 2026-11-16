@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://bs08tmy3umdk4"]
 
+[ext_resource type="Script" uid="uid://ccb6rctrx5cll" path="res://3DLevels/StoreLevel/Scripts/main.gd" id="1_6g2p5"]
 [ext_resource type="PackedScene" uid="uid://dia2nitkmtgca" path="res://3DLevels/StoreLevel/Player/player.tscn" id="1_umu72"]
+[ext_resource type="PackedScene" uid="uid://bk6la2e0chbiv" path="res://3DLevels/BiteSizedComp/repairscene.tscn" id="2_grhqj"]
 [ext_resource type="PackedScene" uid="uid://tsqd61dc77ma" path="res://3DLevels/StoreLevel/Shelves/Shelf.tscn" id="2_urwil"]
 [ext_resource type="PackedScene" uid="uid://b1ew38ggxfo27" path="res://3DLevels/StoreLevel/ShelfParts/Scenes/cpu_part.tscn" id="3_gr13w"]
+[ext_resource type="PackedScene" uid="uid://c48kvert0kk51" path="res://2Dlevels/software_repair.tscn" id="3_jb3f2"]
 [ext_resource type="PackedScene" uid="uid://duk1klewh8hku" path="res://3DLevels/StoreLevel/BuildingMeshes/floor.tscn" id="4_kc3nf"]
 [ext_resource type="PackedScene" uid="uid://cph58qp622wwk" path="res://3DLevels/StoreLevel/PropMeshes/checkout.tscn" id="6_6jt8s"]
 [ext_resource type="PackedScene" uid="uid://df1gogbm5rcdg" path="res://3DLevels/StoreLevel/PropMeshes/computer.tscn" id="6_rrh42"]
+[ext_resource type="Script" uid="uid://cihhnxr0u027e" path="res://3DLevels/StoreLevel/Scripts/customer_manager.gd" id="7_6g2p5"]
 [ext_resource type="PackedScene" uid="uid://cc6snpibawnpa" path="res://3DLevels/StoreLevel/PropMeshes/workbench.tscn" id="7_rrh42"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_3a435"]
-size = Vector3(6.589905, 0.26464844, 6.9385376)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_urwil"]
-data = PackedVector3Array(-3.2949998, 0.13229999, 3.4692998, 3.2949998, 0.13229999, 3.4692998, -3.2949998, -0.13229999, 3.4692998, 3.2949998, 0.13229999, 3.4692998, 3.2949998, -0.13229999, 3.4692998, -3.2949998, -0.13229999, 3.4692998, 3.2949998, 0.13229999, -3.4692998, -3.2949998, 0.13229999, -3.4692998, 3.2949998, -0.13229999, -3.4692998, -3.2949998, 0.13229999, -3.4692998, -3.2949998, -0.13229999, -3.4692998, 3.2949998, -0.13229999, -3.4692998, 3.2949998, 0.13229999, 3.4692998, 3.2949998, 0.13229999, -3.4692998, 3.2949998, -0.13229999, 3.4692998, 3.2949998, 0.13229999, -3.4692998, 3.2949998, -0.13229999, -3.4692998, 3.2949998, -0.13229999, 3.4692998, -3.2949998, 0.13229999, -3.4692998, -3.2949998, 0.13229999, 3.4692998, -3.2949998, -0.13229999, -3.4692998, -3.2949998, 0.13229999, 3.4692998, -3.2949998, -0.13229999, 3.4692998, -3.2949998, -0.13229999, -3.4692998, 3.2949998, 0.13229999, 3.4692998, -3.2949998, 0.13229999, 3.4692998, 3.2949998, 0.13229999, -3.4692998, -3.2949998, 0.13229999, 3.4692998, -3.2949998, 0.13229999, -3.4692998, 3.2949998, 0.13229999, -3.4692998, -3.2949998, -0.13229999, 3.4692998, 3.2949998, -0.13229999, 3.4692998, -3.2949998, -0.13229999, -3.4692998, 3.2949998, -0.13229999, 3.4692998, 3.2949998, -0.13229999, -3.4692998, -3.2949998, -0.13229999, -3.4692998)
+[ext_resource type="PackedScene" uid="uid://do8hnufsn6ef3" path="res://3DLevels/StoreLevel/Customers/customer.tscn" id="9_l1ovf"]
+[ext_resource type="Script" uid="uid://up51wsw2ykm6" path="res://3DLevels/StoreLevel/Scripts/hud.gd" id="12_cfqw3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6jt8s"]
 
@@ -37,25 +37,20 @@ glow_hdr_threshold = 1.2
 fog_light_color = Color(0.6880135, 0.71702665, 0.76215947, 1)
 fog_light_energy = 0.01
 
-[node name="microCENTER" type="Node3D" unique_id=1930668010]
+[node name="Main" type="Node" unique_id=1937001275]
+script = ExtResource("1_6g2p5")
+hardware_repair_scene = ExtResource("2_grhqj")
+software_repair_scene = ExtResource("3_jb3f2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=587016046]
+[node name="microCENTER" type="Node3D" parent="." unique_id=1930668010]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=929168259]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32315063, -0.36767578, -0.30996704)
-mesh = SubResource("BoxMesh_3a435")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1552249802]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32315063, -0.36767578, -0.30996704)
-shape = SubResource("ConcavePolygonShape3D_urwil")
-
-[node name="Player" parent="." unique_id=751431608 instance=ExtResource("1_umu72")]
+[node name="Player" parent="microCENTER" unique_id=751431608 instance=ExtResource("1_umu72")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.541482, 1.246393, 3.9180694)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1768886401]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="microCENTER" unique_id=1768886401]
 environment = SubResource("Environment_3a435")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment" unique_id=21236237]
+[node name="OmniLight3D" type="OmniLight3D" parent="microCENTER/WorldEnvironment" unique_id=21236237]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.085417, 5.1518726, -12.738742)
 light_color = Color(0.9668763, 0.87487334, 0.79680043, 1)
 light_energy = 15.0
@@ -64,7 +59,7 @@ shadow_enabled = true
 omni_range = 100.0
 omni_attenuation = 2.0
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="WorldEnvironment" unique_id=1651222182]
+[node name="OmniLight3D2" type="OmniLight3D" parent="microCENTER/WorldEnvironment" unique_id=1651222182]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.815012, 5.1518726, -12.738742)
 light_color = Color(0.9668763, 0.87487334, 0.79680043, 1)
 light_energy = 15.0
@@ -73,7 +68,7 @@ shadow_enabled = true
 omni_range = 100.0
 omni_attenuation = 2.0
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="WorldEnvironment" unique_id=903117989]
+[node name="OmniLight3D3" type="OmniLight3D" parent="microCENTER/WorldEnvironment" unique_id=903117989]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.085417, 5.1518726, 7.370424)
 light_color = Color(0.9668763, 0.87487334, 0.79680043, 1)
 light_energy = 15.0
@@ -82,7 +77,7 @@ shadow_enabled = true
 omni_range = 100.0
 omni_attenuation = 2.0
 
-[node name="OmniLight3D4" type="OmniLight3D" parent="WorldEnvironment" unique_id=580417075]
+[node name="OmniLight3D4" type="OmniLight3D" parent="microCENTER/WorldEnvironment" unique_id=580417075]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7675486, 5.1518726, 7.370424)
 light_color = Color(0.9668763, 0.87487334, 0.79680043, 1)
 light_energy = 15.0
@@ -91,41 +86,68 @@ shadow_enabled = true
 omni_range = 100.0
 omni_attenuation = 2.0
 
-[node name="Shelves" type="Node3D" parent="." unique_id=1585967252]
+[node name="Shelves" type="Node3D" parent="microCENTER" unique_id=1585967252]
 
-[node name="Shelf2" parent="Shelves" unique_id=1246968707 instance=ExtResource("2_urwil")]
+[node name="Shelf2" parent="microCENTER/Shelves" unique_id=1246968707 instance=ExtResource("2_urwil")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 2.281641, 2.0319786, -18.338856)
 
-[node name="Shelf3" parent="Shelves" unique_id=1575075276 instance=ExtResource("2_urwil")]
+[node name="Shelf3" parent="microCENTER/Shelves" unique_id=1575075276 instance=ExtResource("2_urwil")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 6.822546, 2.0319786, -18.338856)
 
-[node name="Shelf4" parent="Shelves" unique_id=2093866290 instance=ExtResource("2_urwil")]
+[node name="Shelf4" parent="microCENTER/Shelves" unique_id=2093866290 instance=ExtResource("2_urwil")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -6.7092314, 2.0319786, -18.338856)
 stock = Array[PackedScene]([ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w")])
 
-[node name="Shelf5" parent="Shelves" unique_id=1174738688 instance=ExtResource("2_urwil")]
+[node name="Shelf5" parent="microCENTER/Shelves" unique_id=1174738688 instance=ExtResource("2_urwil")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -2.2179585, 2.0319786, -18.338856)
 
-[node name="Floors" type="Node3D" parent="." unique_id=602700515]
+[node name="Floors" type="Node3D" parent="microCENTER" unique_id=602700515]
 
-[node name="Floor" parent="Floors" unique_id=1091073900 instance=ExtResource("4_kc3nf")]
+[node name="Floor" parent="microCENTER/Floors" unique_id=1091073900 instance=ExtResource("4_kc3nf")]
 
-[node name="Floor2" parent="Floors" unique_id=1897990455 instance=ExtResource("4_kc3nf")]
+[node name="Floor2" parent="microCENTER/Floors" unique_id=1897990455 instance=ExtResource("4_kc3nf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2, 0, 0)
 
-[node name="Floor3" parent="Floors" unique_id=149282227 instance=ExtResource("4_kc3nf")]
+[node name="Floor3" parent="microCENTER/Floors" unique_id=149282227 instance=ExtResource("4_kc3nf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25.2)
 
-[node name="Floor4" parent="Floors" unique_id=1781526255 instance=ExtResource("4_kc3nf")]
+[node name="Floor4" parent="microCENTER/Floors" unique_id=1781526255 instance=ExtResource("4_kc3nf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2, 0, -25.2)
 
-[node name="Props" type="Node3D" parent="." unique_id=65881611]
+[node name="Props" type="Node3D" parent="microCENTER" unique_id=65881611]
 
-[node name="computer2" parent="Props" unique_id=1999666782 instance=ExtResource("6_rrh42")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4456234, 1.2439611, 0)
+[node name="MainDesk" type="Node3D" parent="microCENTER" unique_id=1317907384]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.3340993, 0)
 
-[node name="Checkout" parent="Props" unique_id=343886679 instance=ExtResource("6_6jt8s")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.192468, 0, 0)
+[node name="Checkout" parent="microCENTER/MainDesk" unique_id=343886679 instance=ExtResource("6_6jt8s")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.6992455, 0.41335493, 0)
 
-[node name="Workbench" parent="Props" unique_id=945673384 instance=ExtResource("7_rrh42")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.9538424, 0, 1.102251)
+[node name="Workbench" parent="microCENTER/MainDesk" unique_id=945673384 instance=ExtResource("7_rrh42")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.9538424, 0.72111917, 1.5937986)
+
+[node name="CustomerManager" type="Node3D" parent="microCENTER" unique_id=200943801]
+script = ExtResource("7_6g2p5")
+customer_scene = ExtResource("9_l1ovf")
+computer_scene = ExtResource("6_rrh42")
+software_chance = 0.5
+spawn_interval = 5.0
+stand_offset = Vector3(0, 0, -2)
+
+[node name="Entrance" type="Marker3D" parent="microCENTER/CustomerManager" unique_id=2010920970]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.96, 1, -2)
+
+[node name="Exit" type="Marker3D" parent="microCENTER/CustomerManager" unique_id=1924073553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.133, 1, -2)
+
+[node name="CounterSpots" type="Node3D" parent="microCENTER/CustomerManager" unique_id=1412713652]
+
+[node name="Marker3D" type="Marker3D" parent="microCENTER/CustomerManager/CounterSpots" unique_id=109593394]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7558413, 1.7132435, -0.015565872)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=522376896]
+script = ExtResource("12_cfqw3")
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer" unique_id=1304463411]
+offset_right = 500.0
+offset_bottom = 300.0
+theme_override_font_sizes/font_size = 50
