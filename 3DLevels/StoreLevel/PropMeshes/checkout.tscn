@@ -1110,7 +1110,6 @@ shader_parameter/uv2_offset = Vector3(0, 0, 0)
 [node name="Checkout" type="Node3D" unique_id=343886679]
 
 [node name="checkout_counter" type="Node3D" parent="." unique_id=858325822]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 
 [node name="Cash Register Base" type="MeshInstance3D" parent="checkout_counter" unique_id=2018258529]
 transform = Transform3D(-0.014244731, 0, 2.1508948e-09, 0, 0.014244731, 0, -2.1508948e-09, 0, -0.014244731, -0.06404078, 1.2939981, 0.32259142)
@@ -1161,7 +1160,7 @@ surface_material_override/1 = SubResource("ShaderMaterial_ig7k0")
 surface_material_override/2 = SubResource("ShaderMaterial_galx5")
 
 [node name="Mug Handle" type="MeshInstance3D" parent="checkout_counter" unique_id=1969615380]
-transform = Transform3D(0.042607974, 0.019868433, 7.1055046e-09, 0, -1.6813052e-08, 0.047012698, 0.019868432, -0.042607978, -1.5237797e-08, 1.5129628, 1.422435, 0.23278888)
+transform = Transform3D(-0.04240815, -0.020291418, -7.256774e-09, 0, -1.6813052e-08, 0.047012698, -0.020291416, 0.04240815, 1.5166336e-08, 2.2011955, 1.422435, -0.17255564)
 material_overlay = SubResource("ShaderMaterial_otdsc")
 mesh = SubResource("ArrayMesh_o4sxb")
 surface_material_override/0 = SubResource("ShaderMaterial_msnv0")

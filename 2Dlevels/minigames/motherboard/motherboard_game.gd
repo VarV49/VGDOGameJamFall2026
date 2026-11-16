@@ -20,8 +20,8 @@ var dragging := false
 var pointer := Vector2.ZERO
 var feedback := "Match each part to its labeled socket."
 var solved := false
+var previous_mouse_mode
 var closing := false
-var previous_mouse_mode: int
 var tray_order: Array[int] = [0, 1, 2, 3, 4, 5]
 
 func _ready() -> void:
@@ -51,7 +51,7 @@ func _board_point(point: Vector2) -> Vector2:
 
 func _card(part: int) -> Rect2:
 	var index := tray_order.find(part)
-	return Rect2(810 + (index % 2) * 166, 220 + (index / 2) * 168, 152, 154)
+	return Rect2(810 + (index % 2) * 166, 220 + floori(index / 2.0) * 168, 152, 154)
 
 func _target_at(point: Vector2) -> int:
 	for part in range(6):

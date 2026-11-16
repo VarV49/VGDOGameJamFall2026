@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://df1gogbm5rcdg"]
 
 [ext_resource type="PackedScene" uid="uid://bfvau7e5orn5f" path="res://3DLevels/StoreLevel/PropMeshes/GLBStuff/computer.glb" id="1_wht2s"]
+[ext_resource type="Script" uid="uid://ui6yv2ycl326" path="res://3DLevels/StoreLevel/Scripts/computer.gd" id="2_qo3vn"]
 [ext_resource type="Shader" uid="uid://bdy4ge35lkww" path="res://Shaders/inverted_outline.gdshader" id="2_ubwpr"]
 [ext_resource type="Shader" uid="uid://dachs42a43aev" path="res://Shaders/cell_shader.gdshader" id="2_xm4tx"]
 
@@ -54,6 +55,7 @@ shader_parameter/uv2_scale = Vector3(0, 0, 0)
 shader_parameter/uv2_offset = Vector3(0, 0, 0)
 
 [node name="computer" unique_id=1999666782 instance=ExtResource("1_wht2s")]
+script = ExtResource("2_qo3vn")
 
 [node name="Base" parent="." index="0" unique_id=823567898]
 material_overlay = SubResource("ShaderMaterial_6odyx")

@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://c48kvert0kk51"]
+
+[ext_resource type="Script" uid="uid://bujbybrx0w2sy" path="res://2Dlevels/software_repair.gd" id="1_phnn6"]
+[ext_resource type="PackedScene" uid="uid://cq2jloccwhwc6" path="res://2Dlevels/minigames/dominoes/domino_game.tscn" id="2_hck0l"]
+[ext_resource type="PackedScene" path="res://2Dlevels/minigames/motherboard/motherboard_game.tscn" id="3_hlemj"]
+[ext_resource type="PackedScene" uid="uid://c2pi2fo2fxkft" path="res://2Dlevels/minigames/wires/wire_game.tscn" id="4_yso0y"]
+
+[node name="SoftwareRepair" type="Control" unique_id=1299761719]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_phnn6")
+minigames = Array[PackedScene]([ExtResource("2_hck0l"), ExtResource("3_hlemj"), ExtResource("4_yso0y")])
+done_signals = Array[StringName]([&"completed"])
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1635904105]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Job" type="Label" parent="." unique_id=327382061]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Message" type="Label" parent="." unique_id=386039074]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=30517179]
+layout_mode = 0
+offset_right = 4.0
+offset_bottom = 27.0
