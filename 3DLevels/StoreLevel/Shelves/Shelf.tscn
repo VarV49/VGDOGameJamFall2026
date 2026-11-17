@@ -135,6 +135,14 @@ script = ExtResource("2_qyb56")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8099755, -2.6074781, -3.9151225)
 script = ExtResource("2_qyb56")
 
+[node name="Spawn5" type="Marker3D" parent="Slots" unique_id=1320302877]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5333844, 0.5421517, -0.04547328)
+script = ExtResource("2_qyb56")
+
+[node name="Spawn6" type="Marker3D" parent="Slots" unique_id=450410226]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.533, -2.6, -0.045)
+script = ExtResource("2_qyb56")
+
 [node name="shelf" type="Node3D" parent="." unique_id=1596107418]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 

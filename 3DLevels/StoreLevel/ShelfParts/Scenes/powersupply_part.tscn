@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://dv67g0f0yuj0n"]
 
 [ext_resource type="PackedScene" uid="uid://bnvpcplcdodfk" path="res://3DLevels/StoreLevel/ShelfParts/Scenes/base_part.tscn" id="1_7gims"]
+[ext_resource type="PackedScene" uid="uid://dwcfkwjsluscg" path="res://3DLevels/StoreLevel/ShelfParts/PartMeshes/power_supply.glb" id="2_uvc45"]
 
 [node name="ALUPart" unique_id=1054724396 instance=ExtResource("1_7gims")]
 id = &"ALU"
 display_name = "ALU"
 category = "ALU"
 socket_type = &"ALU"
+
+[node name="power_supply" parent="." index="1" unique_id=824514011 instance=ExtResource("2_uvc45")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)

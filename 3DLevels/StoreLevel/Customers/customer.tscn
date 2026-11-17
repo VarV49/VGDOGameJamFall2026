@@ -1,15 +1,14 @@
 [gd_scene format=3 uid="uid://do8hnufsn6ef3"]
 
 [ext_resource type="Script" uid="uid://bvi1l20bpgbux" path="res://3DLevels/StoreLevel/Customers/customer.gd" id="1_b3k2d"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_3a435"]
+[ext_resource type="PackedScene" uid="uid://cgb66h3yei5mk" path="res://3DLevels/StoreLevel/Customers/CustomerBot1.glb" id="2_127hh"]
 
 [node name="Customer" type="Node3D" unique_id=1828150373]
 script = ExtResource("1_b3k2d")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=424472507]
-mesh = SubResource("BoxMesh_3a435")
-
 [node name="Label3D" type="Label3D" parent="." unique_id=1853627258]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4997716, 0)
 pixel_size = 0.01
+
+[node name="CustomerBot1" parent="." unique_id=1679125529 instance=ExtResource("2_127hh")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)

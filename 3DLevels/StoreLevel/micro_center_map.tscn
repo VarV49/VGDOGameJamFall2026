@@ -10,13 +10,15 @@
 [ext_resource type="PackedScene" uid="uid://cph58qp622wwk" path="res://3DLevels/StoreLevel/PropMeshes/checkout.tscn" id="6_6jt8s"]
 [ext_resource type="PackedScene" uid="uid://df1gogbm5rcdg" path="res://3DLevels/StoreLevel/PropMeshes/computer.tscn" id="6_rrh42"]
 [ext_resource type="Script" uid="uid://cihhnxr0u027e" path="res://3DLevels/StoreLevel/Scripts/customer_manager.gd" id="7_6g2p5"]
-[ext_resource type="PackedScene" uid="uid://dv67g0f0yuj0n" path="res://3DLevels/StoreLevel/ShelfParts/Scenes/alu_part.tscn" id="7_8tkel"]
-[ext_resource type="PackedScene" uid="uid://buggraevgwcdi" path="res://3DLevels/StoreLevel/ShelfParts/Scenes/gpu_part.tscn" id="7_ds26g"]
+[ext_resource type="PackedScene" uid="uid://dv67g0f0yuj0n" path="res://3DLevels/StoreLevel/ShelfParts/Scenes/powersupply_part.tscn" id="7_8tkel"]
+[ext_resource type="PackedScene" uid="uid://buggraevgwcdi" path="res://3DLevels/StoreLevel/ShelfParts/Scenes/ssd_part.tscn" id="7_ds26g"]
 [ext_resource type="PackedScene" uid="uid://cc6snpibawnpa" path="res://3DLevels/StoreLevel/PropMeshes/workbench.tscn" id="7_rrh42"]
 [ext_resource type="PackedScene" uid="uid://cnmmxoki2npgn" path="res://3DProps/caution_wet_sign.tscn" id="8_jb3f2"]
 [ext_resource type="PackedScene" uid="uid://26nk6002w747" path="res://3DLevels/StoreLevel/ShelfParts/Scenes/ram_part.tscn" id="8_y0ppm"]
 [ext_resource type="PackedScene" uid="uid://do8hnufsn6ef3" path="res://3DLevels/StoreLevel/Customers/customer.tscn" id="9_l1ovf"]
 [ext_resource type="Script" uid="uid://up51wsw2ykm6" path="res://3DLevels/StoreLevel/Scripts/hud.gd" id="12_cfqw3"]
+[ext_resource type="PackedScene" uid="uid://dgrt0u5yu5iyg" path="res://3DProps/shopping_cart.tscn" id="17_inw8k"]
+[ext_resource type="PackedScene" uid="uid://cvj2r3sloqucj" path="res://3DLevels/StoreLevel/Player/PauseScreen/PauseMenu.tscn" id="18_y0ppm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6jt8s"]
 
@@ -41,6 +43,14 @@ glow_hdr_threshold = 1.2
 fog_light_color = Color(0.6880135, 0.71702665, 0.76215947, 1)
 fog_light_energy = 0.01
 
+[sub_resource type="Curve3D" id="Curve3D_y0ppm"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -25.385, 0, -10.8, 0, 0, 0, 0, 0, 0, 3.18, 0, -10.8),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
 [node name="Main" type="Node" unique_id=1937001275]
 script = ExtResource("1_6g2p5")
 hardware_repair_scene = ExtResource("2_grhqj")
@@ -50,6 +60,8 @@ software_repair_scene = ExtResource("3_jb3f2")
 
 [node name="Player" parent="microCENTER" unique_id=751431608 instance=ExtResource("1_umu72")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.541482, 1.246393, 3.9180694)
+speed = null
+turn_speed = null
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="microCENTER" unique_id=1768886401]
 environment = SubResource("Environment_3a435")
@@ -96,22 +108,27 @@ omni_attenuation = 2.0
 
 [node name="Shelf2" parent="microCENTER/Shelves/CPUShelves" unique_id=1246968707 instance=ExtResource("2_urwil")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 2.281641, 2.0319786, -18.338856)
+stock = Array[PackedScene]([ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w")])
 
 [node name="Shelf3" parent="microCENTER/Shelves/CPUShelves" unique_id=1575075276 instance=ExtResource("2_urwil")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 6.822546, 2.0319786, -18.338856)
+stock = Array[PackedScene]([ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w")])
 
 [node name="Shelf4" parent="microCENTER/Shelves/CPUShelves" unique_id=2093866290 instance=ExtResource("2_urwil")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -6.7092314, 2.0319786, -18.338856)
-stock = Array[PackedScene]([ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w")])
+stock = Array[PackedScene]([ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w")])
 
 [node name="Shelf5" parent="microCENTER/Shelves/CPUShelves" unique_id=1174738688 instance=ExtResource("2_urwil")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -2.2179585, 2.0319786, -18.338856)
+stock = Array[PackedScene]([ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w")])
 
 [node name="Shelf6" parent="microCENTER/Shelves/CPUShelves" unique_id=1144303315 instance=ExtResource("2_urwil")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -21.805115, 2.0319786, -18.338856)
+stock = Array[PackedScene]([ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w")])
 
 [node name="Shelf7" parent="microCENTER/Shelves/CPUShelves" unique_id=998885878 instance=ExtResource("2_urwil")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -17.26421, 2.0319786, -18.338856)
+stock = Array[PackedScene]([ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w")])
 
 [node name="Shelf8" parent="microCENTER/Shelves/CPUShelves" unique_id=371196676 instance=ExtResource("2_urwil")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -30.795988, 2.0319786, -18.338856)
@@ -119,6 +136,7 @@ stock = Array[PackedScene]([ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtR
 
 [node name="Shelf9" parent="microCENTER/Shelves/CPUShelves" unique_id=1147903160 instance=ExtResource("2_urwil")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -26.304714, 2.0319786, -18.338856)
+stock = Array[PackedScene]([ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w"), ExtResource("3_gr13w")])
 
 [node name="GPUShelves" type="Node3D" parent="microCENTER/Shelves" unique_id=1843696190]
 
@@ -220,10 +238,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.133, 1, -2)
 [node name="Marker3D" type="Marker3D" parent="microCENTER/CustomerManager/CounterSpots" unique_id=109593394]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7558413, 1.7132435, -0.015565872)
 
+[node name="Waypoints" type="Node3D" parent="microCENTER" unique_id=1004203546]
+
+[node name="Path3D" type="Path3D" parent="microCENTER/Waypoints" unique_id=1258740160]
+curve = SubResource("Curve3D_y0ppm")
+
+[node name="ShoppingCarts" type="Node3D" parent="microCENTER" unique_id=1658627174]
+
+[node name="ShoppingCart" parent="microCENTER/ShoppingCarts" unique_id=2111087125 node_paths=PackedStringArray("route") instance=ExtResource("17_inw8k")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 0, 1.4864149, -12.553141)
+route = NodePath("../../Waypoints/Path3D")
+speed = 10.0
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=522376896]
 script = ExtResource("12_cfqw3")
 
 [node name="ScoreLabel" type="Label" parent="CanvasLayer" unique_id=1304463411]
-offset_right = 500.0
-offset_bottom = 300.0
-theme_override_font_sizes/font_size = 50
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 69.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 100
+
+[node name="PauseMenu" parent="." unique_id=671461681 instance=ExtResource("18_y0ppm")]
