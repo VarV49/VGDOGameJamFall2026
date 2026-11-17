@@ -292,10 +292,10 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_dv78i")
 
-[node name="Player" type="CharacterBody3D" unique_id=751431608]
+[node name="Player" type="CharacterBody3D" unique_id=751431608 groups=["player"]]
 script = ExtResource("1_ossyw")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=9138347]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=9138347 groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2373352, 0)
 shape = SubResource("CapsuleShape3D_3a435")
 

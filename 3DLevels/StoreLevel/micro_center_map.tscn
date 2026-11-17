@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://26nk6002w747" path="res://3DLevels/StoreLevel/ShelfParts/Scenes/ram_part.tscn" id="8_y0ppm"]
 [ext_resource type="PackedScene" uid="uid://do8hnufsn6ef3" path="res://3DLevels/StoreLevel/Customers/customer.tscn" id="9_l1ovf"]
 [ext_resource type="Script" uid="uid://up51wsw2ykm6" path="res://3DLevels/StoreLevel/Scripts/hud.gd" id="12_cfqw3"]
+[ext_resource type="PackedScene" uid="uid://dgrt0u5yu5iyg" path="res://3DProps/shopping_cart.tscn" id="17_inw8k"]
 [ext_resource type="PackedScene" uid="uid://cvj2r3sloqucj" path="res://3DLevels/StoreLevel/Player/PauseScreen/PauseMenu.tscn" id="18_y0ppm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6jt8s"]
@@ -42,6 +43,14 @@ glow_hdr_threshold = 1.2
 fog_light_color = Color(0.6880135, 0.71702665, 0.76215947, 1)
 fog_light_energy = 0.01
 
+[sub_resource type="Curve3D" id="Curve3D_y0ppm"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -25.385, 0, -10.8, 0, 0, 0, 0, 0, 0, 3.18, 0, -10.8),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
 [node name="Main" type="Node" unique_id=1937001275]
 script = ExtResource("1_6g2p5")
 hardware_repair_scene = ExtResource("2_grhqj")
@@ -51,6 +60,8 @@ software_repair_scene = ExtResource("3_jb3f2")
 
 [node name="Player" parent="microCENTER" unique_id=751431608 instance=ExtResource("1_umu72")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.541482, 1.246393, 3.9180694)
+speed = null
+turn_speed = null
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="microCENTER" unique_id=1768886401]
 environment = SubResource("Environment_3a435")
@@ -227,12 +238,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.133, 1, -2)
 [node name="Marker3D" type="Marker3D" parent="microCENTER/CustomerManager/CounterSpots" unique_id=109593394]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7558413, 1.7132435, -0.015565872)
 
+[node name="Waypoints" type="Node3D" parent="microCENTER" unique_id=1004203546]
+
+[node name="Path3D" type="Path3D" parent="microCENTER/Waypoints" unique_id=1258740160]
+curve = SubResource("Curve3D_y0ppm")
+
+[node name="ShoppingCarts" type="Node3D" parent="microCENTER" unique_id=1658627174]
+
+[node name="ShoppingCart" parent="microCENTER/ShoppingCarts" unique_id=2111087125 node_paths=PackedStringArray("route") instance=ExtResource("17_inw8k")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 0, 1.4864149, -12.553141)
+route = NodePath("../../Waypoints/Path3D")
+speed = 10.0
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=522376896]
 script = ExtResource("12_cfqw3")
 
 [node name="ScoreLabel" type="Label" parent="CanvasLayer" unique_id=1304463411]
-offset_right = 500.0
-offset_bottom = 300.0
-theme_override_font_sizes/font_size = 50
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 69.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 100
 
 [node name="PauseMenu" parent="." unique_id=671461681 instance=ExtResource("18_y0ppm")]
